@@ -1,0 +1,23 @@
+
+
+
+<!-- <div class="grid-item"  id="nueve"> -->
+<div class="dash-element" id="masDemoGR">
+
+  <div class="titleG">
+    <span>Mantenimiento demorados</span>
+  </div>
+  <div class="selectTipoGR">
+  <select name="" id="selectTipo" [(ngModel)]="estado" (change)="setDatos()">
+    <option value="all">Todos</option>
+    <option value="Pendiente">Pendiente</option>
+    <option value="finalizado">Finalizados</option>
+  </select>
+</div>
+
+  <div class="graph">
+    <canvas id="masDemoGR" baseChart [datasets]="bChartData" [labels]="bChartLabels" [options]="bChartOptions"
+      [legend]="bChartLegend" [type]="bChartType">
+    </canvas>
+  </div>
+</div>

@@ -1,0 +1,70 @@
+<div>
+  <h1>
+    Dashboard
+  </h1>
+</div>
+
+<div class="grid">
+  <div class="item item1">
+
+    <div class="tem">
+      <p class="temTitle">Mes bajo ventas</p>
+      <p class="temVal">{{tempBajaVentas.mes}}</p>
+    </div>
+  </div>
+
+  <div class="item item2">
+    <app-dash-productos></app-dash-productos>
+  </div>
+  <div class="item item3">
+    <app-dash-prod-mantenimientos></app-dash-prod-mantenimientos>
+  </div>
+  <div class="item item4">
+    <div class="tem">
+      <p class="temTitle">Mes alto ventas</p>
+      <p class="temVal">{{tempAltaVentas.mes}}</p>
+    </div>
+  </div>
+  <div class="item item5">
+    <app-dash-mantenimientos></app-dash-mantenimientos>
+  </div>
+  <div class="item item6">
+    <app-dash-categorias></app-dash-categorias>
+    <!-- <app-dash-clientes></app-dash-clientes> -->
+  </div>
+  <div class="item item7">
+    <app-dashboard></app-dashboard>
+  </div>
+  <div class="item item8">
+    <app-dash-clientes></app-dash-clientes>
+  </div>
+  <div class="item item9">
+    <app-dash-rotacion></app-dash-rotacion>
+
+  </div>
+  <div class="item item10">
+    <div id="contVentas">
+      <div class="dash-element" id="sells">
+        <div class="titleCat">
+          <span>Ventas por mes este año</span>
+        </div>
+        <div class="titleCat">
+        <span>{{thisA}}</span>
+        </div>
+        <div class="graph">
+          <canvas id="ventasMes" baseChart [datasets]="bChartData" [labels]="bChartLabels" [options]="bChartOptions"
+            [legend]="bChartLegend" [type]="bChartType">
+          </canvas>
+        </div>
+      </div>
+    </div>
+    <!-- <app-dash-rotacion></app-dash-rotacion> -->
+  </div>
+  <div class="item item11">
+    <app-dash-agotados></app-dash-agotados>
+  </div>
+  <div class="item item12">
+    <app-dash-calificacion></app-dash-calificacion>
+    <!-- <app-dash-calificacion></app-dash-calificacion> -->
+  </div>
+</div>

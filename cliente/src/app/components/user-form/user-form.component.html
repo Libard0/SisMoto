@@ -1,0 +1,69 @@
+<div class="col-md-8 offset-md-2">
+  <div class="card">
+    <div class="card-body">
+      <form>
+        <div class="form-group row" *ngIf="!edit">
+          <label class="col-3 col-form-label" *ngIf="!edit">Cedula Cliente</label>
+          <div class="col-6">
+            <input class="form-control" type="text" name="cedula"
+              [(ngModel)]="cedula" autofocus maxlength="10">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-form-label">Nombre</label>
+          <div class="col-6">
+            <input class="form-control" type="text" name="nombre"
+              [(ngModel)]="usuario.nombre" autofocus>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-form-label">Apellido</label>
+          <div class="col-6">
+            <input class="form-control" type="text" name="apellido"
+              [(ngModel)]="usuario.apellido" autofocus>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-form-label">Celular</label>
+          <div class="col-6">
+            <input class="form-control" type="text" name="celular"
+              [(ngModel)]="celular" autofocus>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-form-label">Correo</label>
+          <div class="col-6">
+            <input class="form-control" type="text" name="correo"
+              [(ngModel)]="usuario.correo" autofocus>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-form-label">Contraseña</label>
+          <div class="col-6">
+            <input class="form-control" type="text" name="contrasena"
+              [(ngModel)]="usuario.contrasena" autofocus>
+          </div>
+        </div>
+
+        <div class="form-group row" *ngIf="admin">
+          <label class="col-3 col-form-label" *ngIf="admin">Tipo de usuario</label>
+          <div class="col-6">
+            <select class="form-select" name="categoria" [(ngModel)]="usuario.idtipousuario">
+              <option value="">Seleccione</option>
+                <option *ngFor="let tipousuario of tipoUsuarios" value={{tipousuario.id}}>{{tipousuario.tipo}}</option>
+            </select>
+          </div>
+        </div>
+      </form>
+      <div class="btn-funcionales">
+        <button class="btn btn-success btn-block btn-sm" id="uf-1" (click)="edit ? updateUsuario() : saveNewUser()">
+          Guardar
+        </button>
+        <a routerLink="/usuarios" class="btn btn-success btn-block btn-sm" id="uf-2">
+          Cancelar
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!--id="uf-1" para llamar el style y definir el tamaño de los botones "uf=User Form"-->

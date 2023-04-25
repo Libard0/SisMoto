@@ -1,0 +1,36 @@
+#selects{
+    /* padding: 1px; */
+    border: none;
+    /* width: 100%; */
+    /* text-align: center; */
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    
+
+}
+.sel{
+    width: 100%;
+    border: none;
+    background-color: #f5f5f5;
+}
+.titleG{
+    width: 100%;
+    border: none;
+    background-color:#f5f5f5;
+    margin-bottom: 5px;
+    /* font-weight: bold; */
+}
+span{
+    background-color: #f5f5f5;
+    padding-left: 5%;
+}
+
+#contenedorRot{
+    height: 100%;
+}
+#rots{
+    background-color: #f5f5f5;
+    height: 100%;
+    padding: 10px;
+}

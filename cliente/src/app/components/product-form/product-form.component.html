@@ -1,0 +1,152 @@
+<div class="col-md-8 offset-md-2">
+  <div class="card">
+    <div class="card-body">
+      <form>
+        <div class="form-group row">
+          <label class="col-3 col-form-label">Fecha</label>
+          <div class="col-6">
+            <input
+              class="form-control"
+              type="date"
+              name="fecha"
+              [(ngModel)]="producto.fecha"
+              autofocus
+              maxlength="10"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-form-label">Marca</label>
+          <div class="col-6">
+            <input
+              class="form-control"
+              type="text"
+              name="marca"
+              [(ngModel)]="producto.marca"
+              autofocus
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-form-label">Referencia</label>
+          <div class="col-6">
+            <input
+              class="form-control"
+              type="text"
+              name="referencia"
+              [(ngModel)]="producto.referencia"
+              autofocus
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-form-label">Descripción</label>
+          <div class="col-6">
+            <textarea
+              name="descripcion"
+              [(ngModel)]="producto.descripcion"
+              rows="2"
+              class="form-control"
+            ></textarea>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-form-label">Precio</label>
+          <div class="col-6">
+            <input
+            type="text"
+            name="precio"
+            [(ngModel)]="precio"
+            value="1"
+            class="form-control"
+          />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-form-label">Cantidad</label>
+          <div class="col-6">
+            <input
+            type="text"
+            name="cantidad"
+            [(ngModel)]="cantidad"
+            class="form-control"
+          />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-form-label">Talla</label>
+          <div class="col-6">
+            <input
+            type="text"
+            name="talla"
+            [(ngModel)]="producto.talla"
+            class="form-control"
+          />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-form-label">Imagen de ref.</label>
+          <div class="col-6">
+            <input
+            type="url"
+            name="imagen"
+            [(ngModel)]="producto.imagen"
+            class="form-control"
+          />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-form-label">Categoría</label>
+          <div class="col-6">
+            <select
+            class="form-select"
+            name="categoria"
+            [(ngModel)]="producto.id_categoria"
+          >
+            <option value="">Seleccione</option>
+            <option
+              *ngFor="let categoria of categorias"
+              value="{{ categoria.id }}"
+            >
+              {{ categoria.nomb_categ }}
+            </option>
+          </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-form-label">Proveedor</label>
+          <div class="col-6">
+            <select
+            class="form-select"
+            name="categoria"
+            [(ngModel)]="producto.idProveedor"
+          >
+            <option value="">Seleccione</option>
+            <option *ngFor="let p of proveedores" value="{{ p.id }}">
+              {{ p.nombre_prov }}
+            </option>
+          </select>
+          </div>
+        </div>
+      </form>
+      <div class="btn-funcionales">
+        <button
+          class="btn btn-success btn-block btn-sm"
+          id="bf-1"
+          (click)="edit ? updateProduct() : saveNewProduct()"
+        >
+          Guardar
+        </button>
+        <a
+          routerLink="/productos"
+          class="btn btn-success btn-block btn-sm"
+          id="bf-2"
+        >
+          Cancelar
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--id="pf-1" para llamar el style y definir el tamaño de los botones-->

@@ -1,0 +1,73 @@
+<!--
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+<div class="div">
+  <a class="btn btn-info btn-sm" routerLink="/signUp" id="SignBT" *ngIf="!session">Sign Up</a>
+  <a class="btn btn-info btn-sm" routerLink="/logIn" id="LogBT" *ngIf="!session">Log In</a>
+  <a class="btn btn-info btn-sm" (click)="logOut()" id="LogOBT" *ngIf="session">Log Out</a>
+  <a class="btn btn-info btn-sm" [routerLink]="['/usuarios/edit', idU]" id="LogOBT" *ngIf="session">Editar</a>
+
+   <select class="btn btn-info btn-sm" id="SignBT" *ngIf="session">
+    < ! - - <i class="fa-solid fa-user"></i>  ->
+  <option value=""><i class="fa-solid fa-user"></i></option>
+  <option value="">Editar usuario</option>
+  <option value="" (click)="logOut()">
+    <a class="btn btn-info btn-sm" (click)="logOut()" id="LogOBT" *ngIf="session">Log Out</a>
+  </option>
+  </select> 
+</div>
+-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+  <a class="navbar-brand" routerLink="/Home">MotoPits</a>
+
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item" *ngIf="(session && admin)">
+        <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+      </li>
+      <li class="nav-item" *ngIf="(session)">
+        <a class="nav-link" routerLink="/productos" routerLinkActive="active">Productos</a>
+      </li>
+      <!-- *ngif="session" -->
+      <li class="nav-item" *ngIf="(session && (admin || userr))">
+        <a class="nav-link" routerLink="/usuarios" routerLinkActive="active">Usuarios</a>
+      </li>
+      <li class="nav-item" *ngIf="(session && admin)">
+        <a class="nav-link" routerLink="/empleados" routerLinkActive="active">Empleados</a>
+      </li>
+      <li class="nav-item" *ngIf="(session && (admin || userr))">
+        <a class="nav-link" routerLink="/proveedores" routerLinkActive="active">Proveedores</a>
+      </li>
+      <li class="nav-item" *ngIf="session">
+        <a class="nav-link" routerLink="/facturas" routerLinkActive="active">Facturas</a>
+      </li>
+      <li class="nav-item" *ngIf="(session && (admin))">
+        <a class="nav-link" routerLink="/categorias" routerLinkActive="active">Categorias</a>
+      </li>
+      <li class="nav-item" *ngIf="session">
+        <a class="nav-link" routerLink="/mantenimientos" routerLinkActive="active">Mantenimientos</a>
+      </li>
+      <ul class="nav" *ngIf="(session && (admin || userr || emp))">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          PERFIL
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" [routerLink]="['/usuarios/edit', idU]" id="LogOBT" *ngIf="session">Actualizar</a></li>
+          <li><a class="dropdown-item" (click)="logOut()" id="LogOBT" *ngIf="session">Cerrar sesion</a></li>
+          </ul>
+        </ul>
+    <button class="btn1 btn-info btn-sm" routerLink="/logIn" id="LogBT" *ngIf="!session">Iniciar sesión</button>
+    </ul>
+  </div>
+</div>
+</nav>

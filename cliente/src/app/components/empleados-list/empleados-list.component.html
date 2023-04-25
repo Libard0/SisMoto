@@ -1,0 +1,100 @@
+<div>
+  <div class="button" routerLink="/usuarios/add" class="btn btn-success btn-block btn-sm" id="ul-1">
+    Agregar Empleados
+  </div>
+</div>
+
+<div class="container">
+
+
+  <div  *ngFor="let usuario of empleados">
+
+    <div class="card text-white bg-info mb-3 text-center" style="max-width: 20rem;">
+
+      <div class="card-header">
+        {{usuario.nombre}} {{usuario.apellido}}
+      </div>
+
+      <div class="card-body bg-dark">
+
+        <h5 class="card-title text-info">Datos de usuario</h5>
+
+        <p>{{'Cedula: '+ usuario.cedula}}</p>
+        <p>{{'Contacto: '+ usuario.celular}}</p>
+        <p>Mail</p>
+        <p>{{usuario.correo}}</p>
+
+        <p>
+          {{getTipo(usuario.idtipousuario)}}
+        </p>
+
+        <!-- <p>{{'Contraseña: '+ usuario.contrasena}}</p> -->
+
+        <a [routerLink]="['/usuarios/edit', usuario.id]" class="btn btn-warning btn-block btn-sm" id="ul-2">
+          <i class="fa-sharp fa-solid fa-pen-to-square"></i>
+          Editar
+        </a>
+
+        <a class="btn btn-danger btn-block btn-sm" id="ul-3" (click)="deleteUsuario(usuario.id)">
+          <i class="fas fa-trash-alt"></i>
+          Borrar
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!--id="ul-1" para llamar el style y definir el tamaño de los botones "ul-1=User List"-->
+
+
+
+
+<!-- <div>
+  <div class="button" routerLink="/empleados/add" class="btn btn-success btn-block btn-sm" id="el-1">
+    Agregar empleado
+  </div>
+</div>
+
+<div class="container">
+
+
+  <div  *ngFor="let empleado of empleados">
+
+    <div class="card text-white bg-info mb-3 text-center">
+
+      <div class="card-header">
+        {{empleado.nombre}} {{empleado.apellido}}
+      </div>
+
+      <div class="card-body bg-dark">
+
+        <h5 class="card-title text-info">Datos del empleado</h5>
+
+        <p>{{'Cargo: '+ empleado.cargo}}</p>
+        <p>{{'Cedula: '+ empleado.cedula}}</p>
+        <p>Mail</p>
+        <p>{{empleado.correo}}</p>
+        <p>{{'Contraseña: '+ empleado.contrasena}}</p>
+
+        <a [routerLink]="['/empleados/edit', empleado.id]" class="btn btn-warning btn-block btn-sm" id="el-2">
+          <i class="fa-sharp fa-solid fa-pen-to-square"></i>
+          Editar
+        </a>
+
+        <a class="btn btn-danger btn-block btn-sm" id="ul-3" (click)="deleteEmpleado(empleado.id)">
+          <i class="fas fa-trash-alt"></i>
+          Borrar
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div> -->

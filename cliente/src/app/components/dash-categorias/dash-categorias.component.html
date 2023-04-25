@@ -1,0 +1,23 @@
+<div id="contenedorCat">
+
+  <div class="dash-element" id="categorys">
+    <div id="tituloCategorias">
+      <span>Categorías más vendidas/usadas</span>
+    </div>
+    <!-- <br> -->
+    <div class="selec">
+
+      <select name="" id="tipoGR" [(ngModel)]="tipoGr" (change)="configureGraph()">categorias mas usadas en
+        <option value="Ventas">Ventas</option>
+        <option value="Mantenimientos">Mantenimientos</option>
+      </select>
+    </div>
+    <div class="graph" id="masUsadaCaTGR">
+      <div>
+        <canvas id="catmasUsada" baseChart [datasets]="bChartData" [labels]="bChartLabels" [options]="bChartOptions"
+          [legend]="bChartLegend" [type]="bChartType">
+        </canvas>
+      </div>
+    </div>
+  </div>
+</div>

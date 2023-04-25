@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="LogIn">
+    <app-user-init-view></app-user-init-view>
+  </div>
+  <div class="container">
+    <div *ngFor="let producto of productos">
+      <div class="card text-center" type="button" [routerLink]="['/productos/viewfull', producto.id]">
+        <div class="card-header text-white justify-content-between">
+          {{ producto.marca }}
+        </div>
+        <img [src]="producto.imagen" class="card-img-top" />
+        <div class="card-body">
+          <p>{{ producto.referencia }}</p>
+          <p>{{ "$ " + producto.precio }}</p>
+        </div>
+      </div>
+    </div>
+    <!-- <a href="https://api.whatsapp.com/send/?phone=573017086744&text&type=phone_number&app_absent=0">Comunicate con nosotros</a> -->
+
+    <!-- <a href="https://web.whatsapp.com/send?phone=[3017086744]">Enviar mensaje por WhatsApp</a> -->
+
+    <div class="div">
+      <app-calificanos></app-calificanos>
+
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div>

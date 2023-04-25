@@ -1,0 +1,203 @@
+<div class="col-md-4 offset-md-4">
+  <div class="card">
+    <div class="card-body">
+      <form>
+        <!--
+                id_mantenimiento?:number;
+                placa?:string;
+                fecha_mantenimiento?:Date;
+                tipo_servicio?:string;
+                descripcion?:string;
+                horas_empleadas?:number;
+                repuestos?:string;
+                manoobra?:number;
+                idCliente?:number;
+                estadoMantenimiento?:string;
+            -->
+        <p>Fecha mantenimiento</p>
+        <div class="form-group">
+          <input
+            type="date"
+            name="fecha"
+            [(ngModel)]="mantenimiento.fecha_mantenimiento"
+            class="form-control"
+          />
+        </div>
+        <label for="">Placa</label><br />
+        <div class="form-group">
+          <input
+            type="text"
+            name="marca"
+            [(ngModel)]="mantenimiento.placa"
+            placeholder="Placa Motocicleta"
+            class="form-control"
+            autofocus
+          />
+        </div>
+        <!-- <label for="">Tipo Servicio</label><br>
+        <div class="form-group">
+          <input type="text" name="referencia" [(ngModel)]="mantenimiento.tipo_servicio" placeholder="Tipo de Servicio"
+            class="form-control"> -->
+        <!-- </div> -->
+        <label for="">Descripción</label><br />
+        <div class="form-group">
+          <textarea
+            name="descripcion"
+            [(ngModel)]="mantenimiento.descripcion"
+            placeholder="Descripción Servicio"
+            rows="2"
+            class="form-control"
+          ></textarea>
+        </div>
+        <label for="">Horas Empleadas</label><br />
+        <div class="form-group">
+          <input
+            type="number"
+            name="precio"
+            [(ngModel)]="mantenimiento.horas_empleadas"
+            value="1"
+            placeholder="Horas Empleadas"
+            class="form-control"
+          />
+        </div>
+
+        <label for="">Repuestos</label><br />
+        <!-- <div class="form-group">
+					<input type="text" name="cantidad" [(ngModel)]="mantenimiento.repuestos" placeholder="Repuestos"
+						class="form-control">
+				</div> -->
+        <div class="form-group">
+          <form (ngSubmit)="agregarProducto()" id="formProd">
+            <!-- <input type="text" name="product_name" placeholder="Nombre del producto" [(ngModel)]="nombre"><br> -->
+
+            <select
+              class="form-select"
+              name="producto"
+              [(ngModel)]="idProducto"
+            >
+              <option value="">Seleccione</option>
+              <option *ngFor="let p of productos" value="{{ p.id }}">
+                {{ p.marca }} {{ p.referencia }}
+              </option>
+            </select>
+
+            <input
+              type="number"
+              name="product_cant"
+              placeholder="Cantidad"
+              [(ngModel)]="cantidad"
+              class="form-control"
+            /><br />
+            <button type="submit">Agregar producto</button>
+          </form>
+          <!-- <button (click)="agregarFormulario()">Agregar otro producto</button> -->
+        </div>
+
+        <div id="product-list" *ngIf="productosAgregados.length > 0">
+          <p>Productos</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let producto of productosAgregados">
+                <td>{{ producto.marca }} {{ producto.referencia }}</td>
+                <td>{{ producto.precio }}</td>
+                <td>{{ producto.cantidadComprar }}</td>
+                <td>
+                  <button (click)="delete(producto)">
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Total</td>
+                <td></td>
+                <td></td>
+                <!-- <td>$1.000.000</td> -->
+                <td>{{ calcularPrecio() }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- <div *ngFor="let producto of productosAgregados">
+					  <h6>{{producto.marca}} {{producto.referencia}}</h6>
+					  <!- -  <p>{{producto.descripcion}}</p>
+					  <p>{{producto.precio}}</p> - ->
+					</div> -->
+        </div>
+
+        <label for="">Mano de Obra</label><br />
+        <div class="form-group">
+          <input
+            type="number"
+            name="talla"
+            [(ngModel)]="mantenimiento.manoobra"
+            placeholder="Mano de Obra"
+            class="form-control"
+          />
+        </div>
+        <label for="">Cliente</label><br />
+        <div class="form-group">
+          <select
+            class="form-select"
+            name="usuario"
+            [(ngModel)]="mantenimiento.idCliente"
+          >
+            <option value="">Seleccione</option>
+            <option *ngFor="let usuario of usuarios" value="{{ usuario.id }}">
+              {{ usuario.cedula }} {{ usuario.nombre }}
+            </option>
+          </select>
+        </div>
+        <label for="">Estado</label><br />
+        <div class="form-group">
+          <select
+            class="form-select"
+            name="categoria"
+            [(ngModel)]="mantenimiento.estadoMantenimiento"
+          >
+            <option value="">Seleccione</option>
+            <option value="Nuevo">Nuevo</option>
+            <option value="Pendiente">Pendiente</option>
+            <option value="Finalizado" *ngIf="edit">Finalizado</option>
+            <option value="Finalizado Facturado" *ngIf="edit">
+              Finalizado Facturado
+            </option>
+          </select>
+
+        </div>
+        <label for="">Seguimiento</label><br />
+        <div class="form-group">
+          <textarea
+            name="seguimiento"
+            id="segMant"
+            cols="30"
+            rows="5"
+            [(ngModel)]="mantenimiento.seguimiento"
+          >
+          </textarea>
+        </div>
+        <!-- (click)="edit ? updateProduct() : saveNewProduct()" -->
+        <button
+          class="btn btn-success btn-block btn-sm"
+          id="pf-1"
+          (click)="edit ? updateMantenimiento() : saveNewMantenimiento()"
+        >
+          Guardar
+        </button>
+        <a
+          routerLink="/mantenimientos"
+          class="btn btn-success btn-block btn-sm"
+          id="pf-2"
+        >
+          Cancelar
+        </a>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+ul, ol {
+  list-style:none;
+}
+
+.nav li a {
+  text-decoration:none;
+  display:block;
+}
+
+.nav li ul {
+  
+  right: 10px;
+  min-width:135px;
+}
+
+.nav li:hover > ul {
+  display:block;
+}
+
+.dropdown-item {
+  padding: 3px 15px;
+}
+.btn1 {
+  float: right;
+  padding: 3px 15px;
+  text-align: center;
+  font-size: 20px;
+  background: #3e88ddd0;
+  border-radius: 40px;
+  border: none;
+  
+}
+

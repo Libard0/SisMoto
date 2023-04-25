@@ -1,0 +1,18 @@
+<div class="col-md-4 offset-md-4">
+  <div class="card">
+    <div class="card-body">
+      <form>
+        <p>Nombre categoria</p>
+        <div class="form-group">
+          <input type="text" id="nombre" name="marca" [(ngModel)]="categoria.nomb_categ" class="form-control" autofocus required minlength="10" maxlength="20">
+        </div>
+        <button class="btn btn-success btn-block btn-sm" id="cf-1" (click)="edit ? updateCategoria() : saveNewCategoria()">  
+          Guardar
+        </button>
+        <a routerLink="/categorias" class="btn btn-success btn-block btn-sm" id="cf-2">
+          Cancelar
+        </a>
+      </form>
+    </div>
+  </div>
+</div>

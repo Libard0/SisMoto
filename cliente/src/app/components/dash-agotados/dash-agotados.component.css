@@ -1,0 +1,26 @@
+#agoExistencias {
+    height: 100%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+}
+
+#ARenovar {
+    height: 100%;
+    padding: 10px;
+}
+/* li{
+    display: block;
+} */
+.izquierda {
+    display: inline-block;
+    float: left;
+}
+
+.derecha {
+    display: inline-block;
+    float: right;
+}
+#prods{
+    cursor: pointer;
+}

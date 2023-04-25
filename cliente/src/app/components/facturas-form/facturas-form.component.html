@@ -1,0 +1,122 @@
+<div class="col-md-8 offset-md-2">
+  <div class="card">
+    <div class="card-body">
+      <form>
+        <div>
+          <div class="form-group row">
+            <label class="col-3 col-form-label">Fecha factura</label>
+            <div class="col-6">
+
+              <input class="form-control" type="date" name="cedula" [(ngModel)]="factura.fecha" autofocus
+                maxlength="10">
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-form-label">Cedula cliente</label>
+          <div class="col-6">
+            <select class="form-select" name="usuario" [(ngModel)]="factura.cedula">
+              <option value="">Seleccione</option>
+              <option *ngFor="let usuario of usuarios" value="{{ usuario.cedula }}">
+                {{ usuario.nombre }} {{ usuario.apellido }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <form (ngSubmit)="agregarProducto()" id="formProd">
+        <div class="form-group row">
+          <label class="col-3 col-form-label">Productos</label>
+          <div class="col-6">
+              <select class="form-select" name="producto" [(ngModel)]="idProducto">
+                <option value="">Seleccione</option>
+                <option *ngFor="let p of productos" value="{{ p.id }}">
+                  {{ p.marca }} {{ p.referencia }}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-3 col-form-label">Cantidad</label>
+            <div class="col-6">
+
+              <input class="form-control" type="number" name="cedula"
+              [(ngModel)]="cantidad" autofocus maxlength="10">
+            </div>
+
+          </div>
+          <div class="form-group row">
+            <label class="col-3 col-form-label"> </label>
+            <div class="col-6">
+              <button type="submit">Agregar producto</button>
+            </div>
+          </div>
+        </form>
+        <div class="form-group row"*ngIf="productosAgregados.length > 0">
+          <label class="col-3 col-form-label">Productos agregados</label>
+          <div class="col-6">
+            <div id="product-list" >
+              <table>
+                <thead>
+                  <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let producto of productosAgregados">
+                    <td>{{ producto.marca }} {{ producto.referencia }}</td>
+                    <td>{{ producto.precio }}</td>
+                    <td style="text-align: center;">{{ producto.cantidadComprar }}</td>
+                    <td>
+                      <button (click)="delete(producto)">
+                        <i class="fas fa-trash-alt"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Total</td>
+                    <td></td>
+                    <td></td>
+                    <td>{{ edit ? factura.total : calcularPrecio() }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-form-label">Forma de pago</label>
+          <div class="col-6">
+            <select class="form-select" name="categoria" [(ngModel)]="factura.id_pago">
+              <option value="">Seleccione</option>
+              <option *ngFor="let pago of pagos" value="{{ pago.id_pago }}">
+                {{ pago.tipo_pago }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-form-label">Tipo de servicio</label>
+          <div class="col-6">
+            <select class="form-select" name="categoria" [(ngModel)]="factura.id_tiposervicio">
+              <option value="">Seleccione</option>
+              <option *ngFor="let tipoServicio of tipoServicios" value="{{ tipoServicio.id_tiposervicio }}">
+                {{ tipoServicio.nombre_tipo_servicio }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="btn-funcionales">
+          <button class="btn btn-success btn-block btn-sm" id="ff-1" (click)="edit ? updateFactura() : saveNewFactura()">
+            Guardar
+          </button>
+          <a routerLink="/facturas" class="btn btn-success btn-block btn-sm" id="ff-2">
+            Cancelar
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

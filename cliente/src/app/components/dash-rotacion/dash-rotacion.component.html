@@ -1,0 +1,26 @@
+<div id="contenedorRot">
+
+    <div class="dash-element" id="rots">
+        <div class="titleG">
+            <span>Rotación de productos</span>
+        </div>
+        
+        <div id="selects">
+            <select name="temporada" id="" class="sel" [(ngModel)]="time" (change)="ordenarDatos()">
+                <option value="mes">Último mes</option>
+                <option value="sem">Último Semestre</option>
+                <option value="year">Último año</option>
+            </select>
+
+            <select name="temporada" id="" class="sel" [(ngModel)]="masMenos" (change)="ordenarDatos()">
+                <option value="mas">Mas rotados</option>
+                <option value="menos">Menos rotados</option>
+            </select>
+        </div>
+        <div class="graph">
+            <canvas id="catmasUsada" baseChart [datasets]="bChartData" [labels]="bChartLabels" [options]="bChartOptions"
+                [legend]="bChartLegend" [type]="bChartType">
+            </canvas>
+        </div>
+    </div>
+</div>

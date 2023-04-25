@@ -1,0 +1,61 @@
+<div *ngIf="!logUser">
+  <div class="button" routerLink="/mantenimientos/add" class="btn btn-success btn-block btn-sm" id="pl-1">
+    Agregar Mantenimientos
+  </div>
+</div>
+
+<div class="container-fluid">
+
+  <div *ngIf="mantenimientos.length>0">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">CLIENTE</th>
+          <th scope="col">PLACA</th>
+          <th scope="col">DESCRIPCION</th>
+          <!-- <th scope="col">REPUESTOS</th> -->
+          <th scope="col">SEGUIMIENTO</th>
+          <th scope="col">HORAS <br> EMPLEADAS</th>
+          <th scope="col">MANO DE<br> OBRA</th>
+          <th scope="col">ESTADO</th>
+          <th scope="col">FECHA</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let mantenimiento of mantenimientos">
+        <tr class="table-success">
+          <th scope="row">{{nombreMan(mantenimiento.idCliente)}}</th>
+          <td>{{mantenimiento.placa}}</td>
+          <td>{{mantenimiento.descripcion}}</td>
+          <textarea name="texto" id="mi-texto" cols="30" rows="4" readonly>{{mantenimiento.seguimiento}}</textarea>
+          <td style="text-align: center;">{{mantenimiento.horas_empleadas}}</td>
+          <td>{{mantenimiento.manoobra}}</td>
+          <td>{{mantenimiento.estadoMantenimiento}}</td>
+          <td>{{mantenimiento.fecha_mantenimiento}}</td>
+
+          <td id="botones">
+            <a *ngIf="!logUser" [routerLink]="['/mantenimientos/edit', mantenimiento.id_mantenimiento]"
+              class="btn btn-warning btn-block btn-sm" id="fl-2">
+              <i class="fa-sharp fa-solid fa-pen-to-square"></i>
+
+            </a>
+
+            <a class="btn btn-danger btn-block btn-sm" id="fl-3"
+              (click)="deleteMantenimiento(mantenimiento.id_mantenimiento)">
+              <i class="fas fa-trash-alt"></i>
+
+            </a>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="container" *ngIf="mantenimientos.length==0">
+    <div id="Message">
+      <h1>No tienes mantenimientos</h1>
+    </div>
+  </div>
+
+</div>

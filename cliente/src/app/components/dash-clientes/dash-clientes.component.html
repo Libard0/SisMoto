@@ -1,0 +1,28 @@
+<!-- <div class="info-title">
+  <h2>Clientes</h2>
+</div> -->
+<div id="contenedorCli">
+
+  <div class="dash-element" id="clients">
+    <div id="titleClient">
+      <span>Clientes recurrentes</span>
+    </div>
+    <div id="selectTipoGR">
+
+      <select name="tipoGraph" id="tipo" (change)="setGraphicData($event)">
+        <option value="Ventas">Ventas</option>
+        <option value="Mantenimientos">Mantenimientos</option>
+      </select>
+    </div>
+
+    <div class="graph" id="masFielGR">
+      <div>
+        <canvas id="masFiel" baseChart [datasets]="bChartData" [labels]="bChartLabels" [options]="bChartOptions"
+          [legend]="bChartLegend" [type]="bChartType">
+        </canvas>
+      </div>
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,17 @@
+#LogBT{
+    margin-left: 5px;
+    background-color: #5ac368ea;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 5px;
+}
+
+h5 {
+  text-align: center;
+}
+
+.titulo .btn {
+  justify-content:  center;
+}

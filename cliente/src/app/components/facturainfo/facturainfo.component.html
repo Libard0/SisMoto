@@ -1,0 +1,106 @@
+<div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>CODIGO: </th>
+                <th>FACT{{factura.id}}</th>
+                <th>Fecha: </th>
+                <th>{{factura.fecha}}</th>
+                <th>Cliente: </th>
+                <th>{{usuario.nombre}} {{usuario.apellido}}</th>
+                <!-- <th>Pago: </th>
+                <th>{{getPago()}}</th> -->
+            </tr>
+
+
+        </thead>
+        <!-- *ngFor="let detalle of detallesfacturas" -->
+        <tbody >
+            <tr>
+                <th>Codigo Producto</th>
+                <th>Nombre Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Categoría</th>
+                <th>Total</th>
+            </tr>
+            <tr *ngFor="let producto of productos">
+                <td>{{producto.id}}</td>
+                <td>{{producto.marca}} {{producto.referencia}}</td>
+                <td>${{producto.precio}}</td>
+                <td>{{getCantidad(producto.id)}}</td>
+                <td>{{producto.id}}</td>
+                <td>{{producto.precio * getCantidad(producto.id)}}</td>
+            </tr>
+            <tr *ngIf="factura.id_tiposervicio == 8">
+              <td></td>
+              <td>Mano de Obra</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>{{getPriceWNMO()}}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>${{factura.total}}</td>
+            </tr>
+            <tr>
+                <td>
+                    <a routerLink="/facturas" class="btn btn-success btn-block btn-sm" id="ff-2">
+                        Volver
+                      </a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>
+<!-- 
+    
+
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">CODIGO</th>
+          <th scope="col">FECHA</th>
+          <th scope="col">CEDULA</th>
+          <th scope="col">DESCRIPCION</th>
+          <th scope="col">PAGO</th>
+          <th scope="col">TIPO SERVICIO</th>
+          <th scope="col">TOTAL</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let factura of facturas">
+        <tr class="table-success" [routerLink]="['/facturas/facturainfo', factura.id]">
+
+          <th scope="row">{{'FACT'+factura.id}}</th>
+          <td>{{factura.fecha}}</td>
+          <td>{{factura.cedula}}</td>
+          <td>{{factura.descripcion}}</td>
+          <td>{{datapago(factura.id_pago)}}</td>
+          <td>{{dataServicio(factura.id_tiposervicio)}}</td>
+          <td>{{factura.total}}</td>
+          <td id="botones">
+            <a [routerLink]="['/facturas/edit', factura.id]" class="btn btn-warning btn-block btn-sm" id="fl-2">
+              <i class="fa-sharp fa-solid fa-pen-to-square"></i>
+
+            </a>
+
+            <a class="btn btn-danger btn-block btn-sm" id="fl-3" (click)="deleteFactura(factura.id)">
+              <i class="fas fa-trash-alt"></i>
+
+            </a>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+
+</div> -->

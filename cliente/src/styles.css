@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+
+.graph {
+    width: 100%;
+    background-color: #f5f5f5;
+
+}
+
+.dash-element {
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+}
+
+/* input:required:invalid {
+    border: 2px solid red;
+  } */

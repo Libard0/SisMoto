@@ -1,0 +1,65 @@
+<div>
+  <div
+    class="button"
+    [routerLink]="['/facturas/add']"
+    class="btn btn-success btn-block btn-sm"
+    id="fl-1"
+    *ngIf="!logUser"
+  >
+    Nueva Factura
+  </div>
+</div>
+
+<div class="container">
+  <div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">CODIGO</th>
+          <th scope="col">FECHA</th>
+          <th scope="col">CEDULA</th>
+          <th scope="col">PAGO</th>
+          <th scope="col">TIPO SERVICIO</th>
+          <th scope="col">TOTAL</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let factura of facturas">
+        <tr class="table-success">
+          <th scope="row">{{ "FACT" + factura.id }}</th>
+          <td>{{ factura.fecha }}</td>
+          <td>{{ factura.cedula }}</td>
+          <td>{{ datapago(factura.id_pago) }}</td>
+          <td>{{ dataServicio(factura.id_tiposervicio) }}</td>
+          <td>{{ factura.total }}</td>
+          <td id="botones">
+            <!-- El boton de eliminar y editar no estaran disponibles para los clientes -->
+            <a
+              [routerLink]="['/facturas/edit', factura.id]"
+              class="btn btn-warning btn-block btn-sm"
+              id="fl-2"
+              *ngIf="!logUser"
+            >
+              <i class="fa-sharp fa-solid fa-pen-to-square"></i>
+            </a>
+            <button
+              class="btn btn-warning btn-block btn-sm"
+              id="fl-3"
+              [routerLink]="['/facturas/facturainfo', factura.id]"
+            >
+              <i class="fa-solid fa-eye"></i>
+            </button>
+
+            <button
+              class="btn btn-danger btn-block btn-sm"
+              id="fl-3"
+              (click)="deleteFactura(factura.id)"
+              *ngIf="!logUser"
+            >
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

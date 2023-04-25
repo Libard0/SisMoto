@@ -1,0 +1,117 @@
+
+#contVentas, #sells{
+    height: 100%;
+    background-color: #f5f5f5;
+}
+#sells{
+    padding: 10px;
+}
+#titleCat{
+    display: flex;
+    justify-items: center;
+    /* font-style: ; */
+}
+span{
+    padding-left: 5%;
+    background-color: #f5f5f5;
+}
+/*  */
+.tem {
+    /* height: 60%; */
+    width: 100%;
+    height: 100%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    /* border-radius: 5%; */
+    
+    display: grid;
+    grid-template-columns: 1;
+    text-align: center;
+    padding: 10px;
+}
+.temVal{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#ventasMesGR{
+    width: 100%;
+    height: 50%;
+}
+
+#venManTime{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    justify-content: center;
+}
+
+
+.grid{
+    outline: 4px solid #fff;
+    background-color: rgb(177, 174, 174);
+    display: grid;
+    padding: 2px;
+    /* margin-bottom: 20%; */
+
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-areas: 
+    "n1 n2 n2 n5 n5 n3 n3 "
+    "n4 n2 n2 n5 n5 n3 n3 "
+    "n7 n6 n6 n6 n9 n9 n9 "
+    "n7 n6 n6 n6 n9 n9 n9 "
+    "n7 n8 n8 n8 n10 n10 n10 "
+    "n7 n8 n8 n8 n10 n10 n10 "
+    "n11 n11 n11 n12 n12 n12 n12"
+    "n11 n11 n11 n12 n12 n12 n12"
+    ;
+    gap: 10px;
+}
+
+.item{
+    /* font-size: 2rem; */
+    background-color: rgb(223, 223, 223);
+    /* height: 80%; */
+    /* font-family: sans-serif; */
+    /* text-align: center; */
+}
+.item1{
+    grid-area: n1;
+}
+.item2{
+    grid-area: n2;
+}
+.item3{
+    grid-area: n3;
+}
+.item4{
+    grid-area: n4;
+}
+.item5{
+    grid-area: n5;
+}
+.item6{
+    grid-area: n6;
+}
+.item7{
+    /* width: 50%; */
+    grid-area: n7;
+}
+.item8{
+    grid-area: n8;
+}
+.item9{
+    grid-area: n9;
+}
+.item10{
+    grid-area: n10;
+}
+.item11{
+    grid-area: n11;
+    /* height: 80%; */
+}
+.item12{
+    grid-area: n12;
+    /* height: 80%; */
+}

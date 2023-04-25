@@ -1,0 +1,15 @@
+.form-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+/*Estilo para el boton Guardar*/
+#uf-1 {
+  margin: center;
+}
+/*Estilo para el boton Cancelar*/
+#uf-2 {
+  margin: center;
+  background-color: #3e88ddd0;
+}

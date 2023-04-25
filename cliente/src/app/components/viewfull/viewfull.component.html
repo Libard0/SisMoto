@@ -1,0 +1,62 @@
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> -->
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-8 p-3 ">
+      <a routerLink="/home" class="btn btn-success btn-block btn-sm" id="ff-2">
+        Regresar
+      </a>
+    </div>
+  </div>
+
+  <div class="padre">
+
+    <div class="row">
+
+      <div class="col-5 ">
+
+        <div class="image">
+          <div class="grande">
+            <img [src]="producto.imagen" alt="Section image" class="imggrande">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-3 p-3">
+
+        <div class="tittle info">
+          <h2>{{producto.marca}}</h2>
+        </div>
+        <div class="body info">
+          <h5>{{producto.referencia}}</h5>
+          <h6>{{'Talla(s): '+producto.talla}}</h6>
+          <h6>{{'Cantidad: '+producto.cantidad}}</h6>
+        </div>
+        <div class="price info">
+          <h5>
+            <h5>{{'Precio: '+producto.precio}}</h5>
+          </h5>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row">
+
+       <div class="col-8 p-3"> <!--bg-light -->
+        <div class="description">
+          <textarea name="texto" id="mi-texto" cols="100" rows="30">
+            {{producto.descripcion}}
+          </textarea>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+</div>

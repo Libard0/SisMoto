@@ -1,0 +1,51 @@
+.container {
+  display: block;
+  width: flex;
+  background-image: radial-gradient(circle at 50% -20.71%, #fee8c3 0, #faeac3 7.14%, #f5ebc3 14.29%, #f0edc4 21.43%, #eaeec5 28.57%, #e5f0c7 35.71%, #dff1ca 42.86%, #daf2cd 50%, #d5f3d1 57.14%, #d0f4d4 64.29%, #cbf5d9 71.43%, #c6f5dd 78.57%, #c2f6e2 85.71%, #bef6e7 92.86%, #bbf7eb 100%);
+}
+
+.padre {
+  padding: 0.5rem;
+  /* border: 1px solid #000; */
+}
+
+.row {
+  justify-content: center;
+}
+
+/* Estilo de la imagen principal del producto */
+.image {
+  text-align: center;
+}
+
+/* Tamaño de la imagen */
+.container .image .imggrande {
+  width: 350px;
+  height: 350px;
+  align-self: center;
+}
+
+/* Estilo del Body info */
+.col-3 {
+  line-height: 200%;
+  font-size: small;
+}
+
+.description {
+  font-size: 20px;
+  text-transform: capitalize;
+  text-align: left ltr;
+}
+
+textarea {
+  width: 120%;
+  height: auto;
+  max-height: 500px;
+  resize: none;
+  pointer-events: none;
+  background: transparent;
+  border: none; /* elimina el borde por defecto del textarea */
+  overflow-y: hidden; /* agrega la propiedad overflow-y para permitir el autoajuste de altura */
+  line-height: 100%;
+}
+

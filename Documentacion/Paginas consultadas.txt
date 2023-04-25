@@ -1,0 +1,16 @@
+Paginas consultadas para el proyecto
+
+Bootstrap
+https://bootswatch.com/
+Tema = LUX 
+https://bootswatch.com/5/lux/bootstrap.min.css
+https://nodejs.org/de/blog/release/v14.16.0/
+
+### Formulario para login###
+https://www.freecodecamp.org/espanol/news/como-construir-una-forma-de-registro-con-etiquetas-flotantes-y-transiciones-usando-solamente/
+
+======Pagina para productos===========
+https://www.tradeinn.com/motardinn/es/mantenimiento-aceites-caja-cambio/16625/s?_gl=1*1dq1wl5*_up*MQ..&gclid=CjwKCAiA5sieBhBnEiwAR9oh2n71IkX6X6KV5nev5MPE8Q9FZXXjdEeSPNUJ-saShy8KODEHBALT0RoCBhoQAvD_BwE&gclsrc=aw.ds
+
+## SISTEMA FACTURACION ###
+https://www.youtube.com/watch?v=Q-Ys-g98g7g&list=PL5oPNTwQiIK2FCG0asIBh_izpJHEfK99X&index=15

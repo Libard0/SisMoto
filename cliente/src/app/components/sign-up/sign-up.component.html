@@ -1,0 +1,96 @@
+<div class="col-md-8 offset-md-2">
+  <div class="card">
+    <div class="card-body">
+      <form [formGroup]="formulario">
+        <div>
+          <div class="form-group row">
+            <label class="col-3 col-form-label">Cedula</label>
+            <div class="col-6">
+
+              <input class="form-control" type="text" formControlName="cedula" [class.is-invalid]="cedulaNovalida"
+                [(ngModel)]="cedula" autofocus maxlength="10">
+            </div>
+            <small *ngIf="cedulaNovalida" class="text-danger col-md-6">Campo requerido o no valido</small>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-3 col-form-label">Nombre</label>
+            <div class="col-6">
+              <input class="form-control" type="text" formControlName="nombre" [class.is-invalid]="nombreNovalido"
+                [(ngModel)]="usuario.nombre" autofocus maxlength="15">
+            </div>
+            <small *ngIf="nombreNovalido" class="text-danger col-md-6">Campo requerido o no valido o minimo 3 caracteres</small>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-3 col-form-label">Apellido</label>
+            <div class="col-6">
+              <input class="form-control" type="text" formControlName="apellido" [class.is-invalid]="apellidoNovalido"
+                [(ngModel)]="usuario.apellido" autofocus maxlength="15">
+            </div>
+            <small *ngIf="apellidoNovalido" class="text-danger col-md-6">Campo requerido o no valido o minimo 3 caracteres</small>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-3 col-form-label">Celular</label>
+            <div class="col-6">
+              <input class="form-control" type="text" formControlName="celular" [class.is-invalid]="celularNovalido"
+                [(ngModel)]="celular" autofocus maxlength="10">
+            </div>
+            <small *ngIf="celularNovalido" class="text-danger col-md-6">Campo requerido o no valido</small>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-3 col-form-label">Correo</label>
+            <div class="col-6">
+              <input class="form-control" type="text" formControlName="correo" [class.is-invalid]="correoNovalido"
+                [(ngModel)]="usuario.correo" autofocus maxlength="50">
+            </div>
+            <small *ngIf="correoNovalido" class="text-danger col-md-6">Campo requerido o no valido</small>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-3 col-form-label">Contraseña</label>
+            <div class="col-6">
+              <input class="form-control" type="password" formControlName="contrasena1"
+                [class.is-invalid]="contrasena1Novalido" [(ngModel)]="usuario.contrasena" autofocus maxlength="12">
+            </div>
+            <small *ngIf="contrasena1Novalido" class="text-danger col-md-6">La contraseña debe tener: Mayuscula, Minuscula, Carater especial y Numeros, entre 8-12 caracteres</small>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-3 col-form-label">Confirmar contraseña</label>
+            <div class="col-6">
+              <input class="form-control" type="password" formControlName="contrasena2"
+                [class.is-invalid]="contrasena2Novalido" [(ngModel)]="pass.contra" autofocus maxlength="12">
+            </div>
+            <!-- <small *ngIf="contrasena2Novalido" class="text-danger col-md-6">La contraseña debe tener: Mayuscula, Minuscula, Numeros o Carater especial y entre 8-12 caracteres</small> -->
+            <small *ngIf="contrasena2NoIgual" class="text-danger col-md-6">Contraseña no coincide</small>
+          </div>
+
+        </div>
+
+      </form>
+      <div class="btn-funcionales">
+        <button class="btn btn-success btn-block btn-sm" id="uf-1" (click)="saveNewUser()">
+          Registrar
+        </button>
+        <a routerLink="/logIn" class="btn btn-info btn-block btn-sm" id="uf-2">
+          Cancelar
+        </a>
+      </div>
+      <!-- Vista para ver lo que se esta ingresando en la validacion de datos -->
+      <!-- <hr>
+      <h3 class="mt-5">Formulario</h3> mt = margin top
+      <pre>Estado formulario: {{formulario.valid}}
+        <br>
+        Status:{{formulario.status}}
+      </pre>
+
+      <pre>
+        {{formulario.value | json}}
+      </pre> -->
+
+    </div>
+  </div>
+</div>

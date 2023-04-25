@@ -1,0 +1,23 @@
+#pl-1 {
+    background-color: #5ac368ea;
+    display: table;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+div {
+    width: 1400px;
+    margin: 10px 0px 0 -70px;
+}
+
+textarea {
+  /* width: 100%; */
+  height: auto;
+  resize: none;
+  /* pointer-events: none; */
+  background: transparent;
+  border: none; /* elimina el borde por defecto del textarea */
+  /* overflow-y: hidden; agrega la propiedad overflow-y para permitir el autoajuste de altura */
+  /* line-height: 200%; */
+}
+

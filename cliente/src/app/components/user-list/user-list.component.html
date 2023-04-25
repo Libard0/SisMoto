@@ -1,0 +1,46 @@
+<div>
+  <div class="button" routerLink="/usuarios/add" class="btn btn-success btn-block btn-sm" id="ul-1">
+    Agregar Usuarios
+  </div>
+</div>
+
+<div class="container">
+
+
+  <div  *ngFor="let usuario of usuarios">
+
+    <div class="card text-white bg-info mb-3 text-center" style="max-width: 20rem;">
+
+      <div class="card-header">
+        {{usuario.nombre}} {{usuario.apellido}}
+      </div>
+
+      <div class="card-body bg-dark">
+
+        <h5 class="card-title text-info">Datos de usuario</h5>
+
+        <p>{{'Cedula: '+ usuario.cedula}}</p>
+        <p>{{'Contacto: '+ usuario.celular}}</p>
+        <p>{{'Mail: '+ usuario.correo}}</p>
+        <!-- <p>{{'Cargo: '+ usuario.contrasena}}</p> -->
+
+        <a [routerLink]="['/usuarios/edit', usuario.id]" class="btn btn-warning btn-block btn-sm" id="ul-2">
+          <i class="fa-sharp fa-solid fa-pen-to-square"></i>
+          Editar
+        </a>
+
+        <a class="btn btn-danger btn-block btn-sm" id="ul-3" (click)="deleteUsuario(usuario.id)">
+          <i class="fas fa-trash-alt"></i>
+          Borrar
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!--id="ul-1" para llamar el style y definir el tamaño de los botones "ul-1=User List"-->

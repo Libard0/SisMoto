@@ -1,0 +1,84 @@
+<div>
+  <div
+    class="button"
+    *ngIf="!logUser"
+    routerLink="/productos/add"
+    class="btn btn-success btn-block btn-sm"
+    id="pl-1"
+  >
+    Agregar Productos
+  </div>
+  <div class="" class="" id="pl-1">
+    <input
+      type="text"
+      [(ngModel)]="valorInput"
+      (input)="filtrarProductos()"
+      id="prodInput"
+      name="productosInput"
+      list="products"
+      placeholder="Buscar"
+    />
+    <datalist id="products">
+      <option
+        *ngFor="let producto of productos"
+        value="{{ producto.marca }}"
+      ></option>
+      <!-- <option value="product">P</option> -->
+    </datalist>
+    <a
+      class="button"
+      (click)="verificarInput()"
+      class="btn btn-info btn-block btn-sm"
+    >
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </a>
+  </div>
+</div>
+
+<div class="container">
+  <div *ngFor="let producto of productosFiltrados">
+    <!-- [routerLink]="['/productos/viewfull', producto.id]" -->
+    <div class="card text-center" type="button" (click)="goView(producto.id)">
+      <div
+        class="card-header bg-dark text-white d-flex justify-content-between align-items-center"
+      >
+        {{ producto.marca }}
+
+        <button
+          class="btn btn-danger"
+          (click)="deleteProducto(producto.id)"
+          *ngIf="!logUser"
+        >
+          <i class="fas fa-trash-alt"></i>
+        </button>
+      </div>
+
+      <img [src]="producto.imagen" class="card-img-top" />
+
+      <div class="card-body">
+        <p>{{ producto.referencia }}</p>
+        <p>{{ "$ " + producto.precio }}</p>
+        <p>{{ "Unidades: " + producto.cantidad }}</p>
+
+        <!--<p>{{'Fecha: ' + producto.created_at}}</p> Revisar la fecha indefinida-->
+
+        <a
+          [routerLink]="['/productos/edit', producto.id]"
+          class="btn btn-info btn-block btn-sm"
+          id="pl-2"
+          *ngIf="!logUser"
+        >
+          <i class="fa-sharp fa-solid fa-pen-to-square"></i>
+          EDIT PROD
+        </a>
+
+        <!--<a [routerLink]="['/productos/viewfull', producto.id]" class="btn btn-info btn-block btn-sm" id="pl-3">
+          <i class="fa-regular fa-eye"></i>
+          VER MAS
+        </a>-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--id="pl-1" para llamar el style y definir el tamaño de los botones "pl= Product List"-->

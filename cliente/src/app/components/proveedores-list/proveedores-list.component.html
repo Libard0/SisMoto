@@ -1,0 +1,45 @@
+<div>
+  <div class="button" routerLink="/proveedores/add" class="btn btn-success btn-block btn-sm" id="prl-1">
+    Agregar proveedor
+  </div>
+</div>
+
+<div class="container">
+
+
+  <div  *ngFor="let proveedor of proveedores">
+
+    <div class="card text-white bg-info mb-3 text-center">
+
+      <div class="card-header">
+        {{proveedor.nombre_prov}}
+      </div>
+
+      <div class="card-body bg-dark">
+
+        <h5 class="card-title text-info">Datos del Proveedor</h5>
+        <p>{{proveedor.nit_prov}}</p>
+        <p>Mail</p>
+        <p>{{proveedor.correo}}</p>
+        <p>{{'Contacto: '+ proveedor.telefono}}</p>
+        <p>{{'direccion: '+ proveedor.direccion}}</p>
+
+        <p>{{'Descripcion: '+ proveedor.descripcion}}</p>
+
+        <a [routerLink]="['/proveedores/edit', proveedor.id]" class="btn btn-warning btn-block btn-sm" id="prl-2">
+          <i class="fa-sharp fa-solid fa-pen-to-square"></i>
+          Editar
+        </a>
+
+        <a class="btn btn-danger btn-block btn-sm" id="prl-3" (click)="deleteProveedor(proveedor.id)">
+          <i class="fas fa-trash-alt"></i>
+          Borrar
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,161 @@
+Pasos para ejecutar el proyeco
+
+1. abrir 2 terminales desde el editor de texto, para ejecutar los siguientes comandos
+
+A. acceder a la carpeta server 
+	cd server
+	ejectar: npm run build
+
+B. acceder a la carpeta server 
+	cd server
+	ejecutar: npm run dev
+
+C. acceder a la carpeta cliente
+	cd cliente
+	ejecutar: ng serve
+
+2. desde el naveador 
+	http://localhost:3000/api/productos (ruta del servidor o api)
+	http://localhost:4200/productos (ruta proyecto o cliente)
+
+=====Creacion de componentes=======
+
+ng g c components/"nombre del nuevo componente"
+
+===== Modificar BD==========
+MariaDB [(none)]> use mysql;
+Database changed
+MariaDB [mysql]> select @@GLOBAL.sql_mode;
++-------------------------------------------------------------------------------------------+
+| @@GLOBAL.sql_mode                                                                         |
++-------------------------------------------------------------------------------------------+
+| STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION |
++-------------------------------------------------------------------------------------------+
+1 row in set (0.004 sec)
+
+MariaDB [mysql]> SET SESSION sql_mode = 'NO_ENGINE_SUBSTITUTION';
+Query OK, 0 rows affected (0.009 sec)
+
+MariaDB [mysql]> SET GLOBAL sql_mode = 'NO_ENGINE_SUBSTITUTION';
+Query OK, 0 rows affected (0.000 sec)
+
+MariaDB [mysql]>
+
+======Pasos para crear una nueva consulta en BD====Server========
+
+1. crear el archivo nuevoController.ts en la ruta "server/src/controllers"
+	"guiarse con la estructura de los ya existentes"
+
+2. crear el archivo nuevoRoute.ts en la ruta "server/src/routes"
+	"guiarse con la estructura de los ya existentes"
+
+3. crear la ruta en el archivo index.ts
+	importar la ruta creada en el paso anterior
+	linea 6 y linea 28
+
+
+====Agregar nuevas rutas de consultas================
+1. crear el archivo en Models/ejemplo.ts
+	Guiarse con lo existente
+
+2. crear el archivo del servicio en servicies/carpetaEjemplo/ejemplo.ts
+	cd cliente
+	ng g s services/"carpetaContenedora"/ejemplo
+	
+	
+	Guiarse con lo existente
+
+3. crear las rutas en los componentes a crear en components/carpetaEjemplo/ejemplo.ts
+	cd cliente
+	ng g c components/"nombre del nuevo componente"
+	Guiarse con lo existente
+
+4. crear la vista en el archivo HTML en components/carpetaEjemplo/ejemplo.ts
+	cd cliente
+	ng g c components/"nombre del nuevo componente"
+	Guiarse con lo existente
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+npm install chart.js --save
+npm install @types/chart.js --save-dev
+npm install @types/chart.js
+
+npm install chartjs-plugin-datalabels --save
+
+npm install highcharts --save*/ TODO ESTO NO JAJA
+
+EJECUTAR: 
+
+npm install -g --save chart.js
+npm install -g chartjs-plugin-annotation --save
+npm install -g  ngx-color-picker --save
+npm install -g  --save ng2-charts -force
+
+SI NO FUNCIONA CON LOS DE ARRIBA:
+npm install --save ng2-charts -force 
+npm install ngx-color-picker --save             
+>> npm install --save chart.js
+>> npm install chartjs-plugin-annotation --save  

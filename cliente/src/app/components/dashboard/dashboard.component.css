@@ -1,0 +1,25 @@
+.lista {
+  font-size: 2px;
+  display: grid;
+  grid-template-columns: 1;
+  justify-content: left;
+}
+
+p {
+  margin-bottom: 1px;
+  font-size: 14px;
+  overflow: auto;
+  cursor: pointer;
+}
+#contdashboard{
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(0, 0, 0);
+  height: 100%;
+}
+
+#navMenu {
+  text-align: left;
+  
+  /* width:80%; */
+}

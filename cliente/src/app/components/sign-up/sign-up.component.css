@@ -1,0 +1,25 @@
+.form-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.btn-funcionales{
+display: flex;
+justify-content: center;
+margin-left: 10px;
+}
+/*Estilo para el boton Guardar*/
+#uf-1 {
+  margin-right: 10%;
+  max-width: 100px;
+  max-height: 30px;
+}
+/*Estilo para el boton Cancelar*/
+#uf-2 {
+  margin-left: 10%;
+  margin-top: 0%;
+  background-color: #3e88ddd0;
+  max-width: 100px;
+}

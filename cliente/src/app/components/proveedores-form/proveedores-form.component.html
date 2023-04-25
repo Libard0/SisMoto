@@ -1,0 +1,59 @@
+<div class="col-md-8 offset-md-2">
+  <div class="card">
+    <div class="card-body">
+      <form>
+        <div class="form-group row">
+          <label class="col-3 col-form-label">Nit Proveedor</label>
+          <div class="col-6">
+
+            <input class="form-control" type="text" name="nit"
+              [(ngModel)]="nit_prov" autofocus maxlength="10">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-form-label">Nombre Proveedor</label>
+          <div class="col-6">
+            <input class="form-control" type="text" name="nombre"
+              [(ngModel)]="proveedor.nombre_prov" autofocus>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-form-label">Correo</label>
+          <div class="col-6">
+            <input class="form-control" type="text" name="correo"
+              [(ngModel)]="proveedor.correo" autofocus>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-form-label">Telefono</label>
+          <div class="col-6">
+            <input class="form-control" type="text" name="telefono"
+              [(ngModel)]="telefono" autofocus>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-form-label">Direccion</label>
+          <div class="col-6">
+            <input class="form-control" type="text" name="direccion"
+              [(ngModel)]="proveedor.direccion" autofocus>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-form-label">Descripcion</label>
+          <div class="col-6">
+            <textarea name="descripcion" [(ngModel)]="proveedor.descripcion"
+            class="form-control"></textarea>
+          </div>
+        </div>
+      </form>
+      <div class="btn-funcionales">
+        <button class="btn btn-success btn-block btn-sm" id="pr-1" (click)="edit ? updateProveedor() : saveNewProveedor()">
+          Guardar
+        </button>
+        <a routerLink="/proveedores" class="btn btn-success btn-block btn-sm" id="pr-2">
+          Cancelar
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

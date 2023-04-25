@@ -1,0 +1,17 @@
+<div id="agoExistencias">
+
+    <div class="dash-element" id="ARenovar">
+        <h6>Productos que deberías revisar su stock</h6>
+        <div *ngIf="productosAcabandoS.length>0">
+            <ul *ngFor="let prA of productosAcabandoS">
+                <li id="prods" [routerLink]="['/productos/edit', prA.id]">
+                    <span class="izquierda">{{prA.marca}} {{prA.referencia}}</span>  
+                    <span class="derecha">Disponibles: {{prA.cantidad}}</span>
+                </li>
+            </ul>
+        </div>
+        <p *ngIf="productosAcabandoS.length == 0">
+            No tienes productos que revisar.
+        </p>
+    </div>
+</div>
