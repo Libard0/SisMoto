@@ -46,7 +46,7 @@ export class ViewfullComponent implements OnInit {
       this.productosService.getProducto(params['id'])
       .subscribe(
         res =>{
-          console.log(res)
+          //console.log(res)
           this.producto = res;
           this.viewfull = true;
         },

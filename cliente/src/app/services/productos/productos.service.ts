@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Producto } from '../../models/productos';
+import { Categoria } from '../../models/productos';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -19,6 +20,10 @@ export class ProductosService {
 
   getProducto(id: string){
     return this.http.get(`${this.API_URI}/productos/${id}`);
+  }
+
+  getProductosByCategoria(id_categoria: string){
+    return this.http.get(`${this.API_URI}/productos/categoria/${id_categoria}`);
   }
 
   deleteProducto(id: string){
